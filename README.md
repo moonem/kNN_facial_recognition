@@ -22,7 +22,7 @@ Supervised machine learning uses inputs, referred to as *features* (`x`), and th
 that can predict the label of a previously unseen data point.
 
 ~~~
-<p align='justify'>
+<div style="text-align: justify">
 **X** &rarr; **h** &rarr; **y**
-</p>
+</div>
 ~~~
