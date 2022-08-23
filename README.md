@@ -58,13 +58,13 @@ Images are typically stored as pixels. These can be represented as a vector by s
 
 #### Examples of feature vectors
 
-We call `$x_i` a feature vector and `d` the dimensions of that feature vector that describe the $i^{th}` sample. For example, if we consider patient data in a hospital as follows,
+We call $x_i$ a feature vector and $d$ the dimensions of that feature vector that describe the $i**{th}$ sample. For example, if we consider patient data in a hospital as follows,
 
-  1) First patient, Mysha Ahmed ($i^th$ patient, here $i$ = 1, $[x_1]$), female (first dimension $d = 1$; encoded $[x_1]_1 = 0$ for female, $1$ for male), height 165 cm (second dimension $d = 2$; encoded as $[x_1]_2 = 165$), 23 years old (third dimension $d = 3$; encoded $[x_1]_3 = 23$), label healthy ($y_i = y_1 = -1$ for healthy, and $+1$ for sick).
+  1) First patient, Mysha Ahmed ($i**{th}$ patient, here $i$ = 1, $[x_1]$), female (first dimension $d = 1$; encoded $[x_1]_1 = 0$ for female, $1$ for male), height 165 cm (second dimension $d = 2$; encoded as $[x_1]_2 = 165$), 23 years old (third dimension $d = 3$; encoded $[x_1]_3 = 23$), label healthy ($y_i = y_1 = -1$ for healthy, and $+1$ for sick).
   
         $$x_1 = [1, 165, 23],  y_1 = -1$$
         
-  2) Second patient, Raif Jamil ($i^{th}$ patient, here $i$ = 2, $[x_2]$), male (first dimension $d = 1$; encoded $[x_2]_1 = 0$ for male), height 167 cm (second dimension $d = 2$; encoded as $[x_2]_2 = 165$), 65 years old (third dimension $d = 3$; encoded $[x_2]_3 = 65$), label healthy ($y_i = y_2 = +1$ for sick).
+  2) Second patient, Raif Jamil ($i**{th}$ patient, here $i$ = 2, $[x_2]$), male (first dimension $d = 1$; encoded $[x_2]_1 = 0$ for male), height 167 cm (second dimension $d = 2$; encoded as $[x_2]_2 = 165$), 65 years old (third dimension $d = 3$; encoded $[x_2]_3 = 65$), label healthy ($y_i = y_2 = +1$ for sick).
   
         $$x_2 = [0, 167, 65],  y_1 = +1$$
 
