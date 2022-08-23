@@ -21,7 +21,7 @@ Supervised learning is when we have a specific data set and we know exactly what
 Supervised machine learning uses inputs, referred to as *features* (`X`), and their corresponding outputs, referred to as *labels* (`y`), to train a function (`h`)
 that can predict the label of a previously unseen data point.
 
-      $$X => h \{=>} y$$
+      $$X --> h --> y$$
 
 For example, our *features* could describe a patient in a hospital (e.g., gender, age, body temperature, various symptoms) and the *label* could be if the patient is sick or healthy. You can use data from past medical records to learn a function (`h`) that is able to determine a future patient's diagnosis based on their symptoms.
 
@@ -93,8 +93,9 @@ Three examples of loss function are *zero-one, squared,* and *absolute* losses.
 The simplest loss function is the zero–one loss. It literally counts how many mistakes a hypothesis function makes on a particular data set. For every single example that is predicted incorrectly, it suffers a loss of 1. The normalized zero–one loss returns the fraction of misclassified training samples, also referred to as the *training error*.
 
     $$L_{0,1}(h) = \frac{1}{n} \sum_{i=1}^n \delta_{h(x_i) \neq y_i}$$
-    \\
-    where, \delta_{h(x_i)\neq y_i = {(1, \text{if h(x_i) \neq y_i \\ 0, \text{otherwise.})}
+    
+    where, $$
+    \delta_{h(x_i)\neq y_i = {(1, \text{if h(x_i) \neq y_i \\ 0, \text{otherwise.})}
     $$
 
 
@@ -108,4 +109,4 @@ squaring has two effects:
 - The loss suffered is always non-negative,
 - The loss suffered grows quadratically with the absolute mispredicted amount; can be problematic for data with noisy labels.
 
-      $$L_{sq}(h) = \frac{1}{n} \sum_{i=1}^n (h(x_i)-y_i)^2$$
+      $$L_{sq}(h) = (1/n) \sum_{i=1}^n (h(x_i)-y_i)^2$$
