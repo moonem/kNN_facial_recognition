@@ -21,7 +21,7 @@ Supervised learning is when we have a specific data set and we know exactly what
 Supervised machine learning uses inputs, referred to as *features* (`X`), and their corresponding outputs, referred to as *labels* (`y`), to train a function (`h`)
 that can predict the label of a previously unseen data point.
 
-      $$X --> h --> y$$
+$$X --> h --> y$$
 
 For example, our *features* could describe a patient in a hospital (e.g., gender, age, body temperature, various symptoms) and the *label* could be if the patient is sick or healthy. You can use data from past medical records to learn a function (`h`) that is able to determine a future patient's diagnosis based on their symptoms.
 
@@ -54,9 +54,9 @@ Images are typically stored as pixels. These can be represented as a vector by s
 
 #### Examples of feature vectors
 
-We call $x_i$ a feature vector and $d$ the dimensions of that feature vector that describe the $i**{th}$ sample. For example, if we consider patient data in a hospital as follows,
+We call $x_i$ a feature vector and $d$ the dimensions of that feature vector that describe the $i^{th}$ sample. For example, if we consider patient data in a hospital as follows,
 
-  1) First patient, Mysha Ahmed ($i^{th}$ patient, here $i$ = 1, $[x_1]$), female (first dimension $d = 1$; encoded $[x_1]_1 = 0$ for female, $1$ for male), height 165 cm (second dimension $d = 2$; encoded as $[x_1]_2 = 165$), 23 years old (third dimension $d = 3$; encoded $[x_1]_3 = 23$), label healthy ($y_i = y_1 = -1$ for healthy, and $+1$ for sick).
+  1) First patient, Mysha Ahmed ($i^{th}$ patient, here $i$ = 1, $[x_1]$), female (first dimension $d=1$; encoded $[x_1]_1 = 0$ for female, $1$ for male), height 165 cm (second dimension $d = 2$; encoded as $[x_1]_2 = 165$), 23 years old (third dimension $d = 3$; encoded $[x_1]_3 = 23$), label healthy ($y_i = y_1 = -1$ for healthy, and $+1$ for sick).
   
         $$x_1 = [1, 165, 23],  y_1 = -1$$
         
@@ -92,12 +92,10 @@ Three examples of loss function are *zero-one, squared,* and *absolute* losses.
 
 The simplest loss function is the zero–one loss. It literally counts how many mistakes a hypothesis function makes on a particular data set. For every single example that is predicted incorrectly, it suffers a loss of 1. The normalized zero–one loss returns the fraction of misclassified training samples, also referred to as the *training error*.
 
-    $$L_{0,1}(h) = \frac{1}{n} \sum_{i=1}^n \delta_{h(x_i) \neq y_i}$$
-    
+$$L_{0,1}(h) = \frac{1}{n} \sum_{i=1}^n \delta_{h(x_i) \neq y_i}$$
     where, $$
     \delta_{h(x_i)\neq y_i = {(1, \text{if h(x_i) \neq y_i \\ 0, \text{otherwise.})}
     $$
-
 
 The zero-one loss is often used to evaluate classifiers in *multiclass/binary classification* settings but rarely useful to guide optimization procedures because the
 function is non-differentiable and non-continuous.
@@ -111,6 +109,4 @@ squaring has two effects:
 
 $$L_{sq}(h) = (1/n) \sum_{i=1}^n (h(x_i)-y_i)^2$$
 
-      ```math
-      x^2
-      ```
+
