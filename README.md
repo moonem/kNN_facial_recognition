@@ -95,7 +95,8 @@ The simplest loss function is the zero–one loss. It literally counts how many 
 
 $$L_{0,1}(h) = \frac{1}{n} \sum_{i=1}^n \delta_{h(x_i) \neq y_i}$$
 
-where, $\delta_{h(x_i)\neq y_i = {1, \text{if h(x_i) \neq y_i}, y_i = 0, \text{otherwise.}} $
+where, $$\delta_{h(x_i)\neq y_i = 1, if h(x_i) \neq y_i, \\
+                  y_i = 0, otherwise. $$
 
 The zero-one loss is often used to evaluate classifiers in *multiclass/binary classification* settings but rarely useful to guide optimization procedures because the
 function is non-differentiable and non-continuous.
@@ -107,6 +108,6 @@ squaring has two effects:
 - The loss suffered is always non-negative,
 - The loss suffered grows quadratically with the absolute mispredicted amount; can be problematic for data with noisy labels.
 
-$$L_{sq}(h) = (1/n) \sum_{i=1}^n (h(x_i)-y_i)^2$$
+$$L_{sq}(h) = \frac{1}{n} \sum_{i=1}^n (h(x_i)-y_i)^2$$
 
 
