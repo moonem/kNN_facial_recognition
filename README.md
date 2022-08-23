@@ -62,8 +62,9 @@ Images are typically stored as pixels. These can be represented as a vector by s
 
 We call `$x_i` a feature vector and `d` the dimensions of that feature vector that describe the $i^{th}` sample. For example, if we consider patient data in a hospital as follows,
 
-  1) Mysha Ahmed ($i^{th}$ patient, here `$i$ = 1`), female (first dimension `$d = 1$`; encoded $[x_1]_1 = 0$ for female, $1$ for male), height 165 cm (second dimension `$d = 2$`; encoded as $[x_i]_2 = 165$), 23 years old (third dimension `$d = 3$`; encoded $[x_1]_3 = 165$), label healthy ($y_i = y_1 = -1$ for healthy, and $+1$ for sick).
-  $$ x_1 = [1, 165, 23], y_1 = -1 $$
+  1) Mysha Ahmed ($i^{th}$ patient, here $i$ = 1), female (first dimension $d = 1$; encoded $[x_1]_1 = 0$ for female, $1$ for male), height 165 cm (second dimension $d = 2$; encoded as $[x_i]_2 = 165$), 23 years old (third dimension $d = 3$; encoded $[x_1]_3 = 165$), label healthy ($y_i = y_1 = -1$ for healthy, and $+1$ for sick).
+  
+        $$x_1 = [1, 165, 23], y_1 = -1$$
   2) 
 
 ### Labels or `y`:
