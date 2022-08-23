@@ -21,4 +21,4 @@ Supervised learning is when we have a specific data set and we know exactly what
 Supervised machine learning uses inputs, referred to as *features* (`x`), and their corresponding outputs, referred to as *labels* (`y`), to train a function (`h`)
 that can predict the label of a previously unseen data point.
 
-\fbox{X} \&rarr \fbox{h} \&rarr \fbox{y}
+\fbox{X} &rarr; \fbox{h} &rarr; \fbox{y}
