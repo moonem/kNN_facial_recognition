@@ -56,6 +56,14 @@ Text documents are often stored as bag-of-words features.This is a method to con
 
 Images are typically stored as pixels. These can be represented as a vector by simply “vectorizing” the image in one long chain of numbers. If an image has six megapixels, and each pixel has three numbers (one for red, green, blue) this yields an 18 million dimensional vector.
 
+#### Examples of feature vectors
+
+We call `$x_i` a feature vector and `d` the dimensions of that feature vector that describe the $i^{th}` sample. For example, if we consider patient data in a hospital as follows,
+
+  1) Mysha Ahmed (`$i^{th}` patient, here `$i$ = 1`), female (first dimension `$d = 1$`; encoded `$[x_i]_1 = 0` for female, $1$ for male), height 165 cm (second dimension `$d = 2$`; encoded as `$[x_i]_2 = 165'), 23 years old (third dimension `$d = 3$`; encoded `$[x_i]_3 = 165'), .
+  $$ x_1 = [1, 165, 23]
+  3) 
+
 ### Labels or `y`:
 
 The label (`y`) is what we want to predict for a given data instance. Labels can come in many different forms such as,
@@ -70,3 +78,6 @@ There are multiple distinct label values. For example, in a facial recognition a
 - class1 = ”Bill Gates”
 - class2 = ”Steve Jobs”
 - class3 = ”Linus Torvalds”
+
+
+
