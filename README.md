@@ -22,9 +22,7 @@ Supervised machine learning uses inputs, referred to as *features* (`X`), and th
 that can predict the label of a previously unseen data point.
 
 ~~~
-
-    **X** &rarr; **h** &rarr; **y**
-
+    X \&rarr; h \&rarr; y
 ~~~
 
 For example, our *features* could describe a patient in a hospital (e.g., gender, age, body temperature, various symptoms) and the *label* could be if the patient is sick or healthy. You can use data from past medical records to learn a function (`h`) that is able to determine a future patient's diagnosis based on their symptoms.
@@ -67,6 +65,8 @@ We call $x_i$ a feature vector and $d$ the dimensions of that feature vector tha
   2) Second patient, Raif Jamil ($i**{th}$ patient, here $i$ = 2, $[x_2]$), male (first dimension $d = 1$; encoded $[x_2]_1 = 0$ for male), height 167 cm (second dimension $d = 2$; encoded as $[x_2]_2 = 165$), 65 years old (third dimension $d = 3$; encoded $[x_2]_3 = 65$), label healthy ($y_i = y_2 = +1$ for sick).
   
         $$x_2 = [0, 167, 65],  y_1 = +1$$
+        
+A feature vector is called **dense** if $x_i$ has large number of non-zero components (or coordinates), and $x_i$ is called **sparse** if it consists mostly of zeros.
 
 ### Labels or `y`:
 
@@ -83,5 +83,21 @@ There are multiple distinct label values. For example, in a facial recognition a
 - class2 = ”Steve Jobs”
 - class3 = ”Linus Torvalds”
 
+### Loss Function:
+
+- There are typically two steps in learning a hypothesis function: selecting the algorithm and finding the best function within the class of possible functions
+- A loss function evaluates a hypothesis on our data and tells us how good or bad it is, helping us choose the best function
+
+Three examples of loss function are *zero-one, squared,* and *absolute* losses.
+
+### Zero-One Loss
+
+The simplest loss function is the zero–one loss. It literally counts how many mistakes a hypothesis function makes on a particular data set. For every single example that is predicted incorrectly, it suffers a loss of 1. The normalized zero–one loss returns the fraction of misclassified training samples, also referred to as the *training error*.
+
+    $$\mathfb{L}_{0/1} (h)=\dfrac{1}{n} \sum_{i=1}^n \del_{h(x_i)\neq y_i} 
+    where, \del_{h(x_i)\neq y_i = {(1, \text{if h(x_i) \neq y_i \\ 0, \text{otherwise.})}
+    $$
 
 
+The zero-one loss is often used to evaluate classifiers in *multiclass/binary classification* settings but rarely useful to guide optimization procedures because the
+function is non-differentiable and non-continuous.
