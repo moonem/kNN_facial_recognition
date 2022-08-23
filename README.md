@@ -94,7 +94,8 @@ Three examples of loss function are *zero-one, squared,* and *absolute* losses.
 The simplest loss function is the zero–one loss. It literally counts how many mistakes a hypothesis function makes on a particular data set. For every single example that is predicted incorrectly, it suffers a loss of 1. The normalized zero–one loss returns the fraction of misclassified training samples, also referred to as the *training error*.
 
 $$L_{0,1}(h) = \frac{1}{n} \sum_{i=1}^n \delta_{h(x_i) \neq y_i}$$
-where, $\delta_{h(x_i)\neq y_i = \left{(1, \text{if h(x_i) \neq y_i \\ 0, \text{otherwise.})} $
+
+where, $\delta_{h(x_i)\neq y_i = {1, \text{if h(x_i) \neq y_i}, y_i = 0, \text{otherwise.}} $
 
 The zero-one loss is often used to evaluate classifiers in *multiclass/binary classification* settings but rarely useful to guide optimization procedures because the
 function is non-differentiable and non-continuous.
