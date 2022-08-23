@@ -109,6 +109,8 @@ squaring has two effects:
 - The loss suffered is always non-negative,
 - The loss suffered grows quadratically with the absolute mispredicted amount; can be problematic for data with noisy labels.
 
+$$L_{sq}(h) = (1/n) \sum_{i=1}^n (h(x_i)-y_i)^2$$
+
       ```math
-      L_{sq}(h) = (1/n) \sum_{i=1}^n (h(x_i)-y_i)^2$$
+      x^2
       ```
