@@ -161,7 +161,8 @@ Evaluate the function through the testing loss:
 
 $$\epsilon_{TE}(h) = \frac{1}{|D_{TE}|} \sum_{(\mathbf{X},y) \epsilon D_{TE}} \mathcal{l}(\mathbf{X},y|h*(.))$$
 
-The function $$ \epsilon_{TE} $$ is the average of the loss function over all points in the test set.
+The function $ \epsilon_{TE} $ is the average of the loss function over all points in the test set.
+The function $\epsilon_{TE}$ is the average of the loss function over all points in the test set.
 
 ## Generalization
 
