@@ -159,7 +159,7 @@ have resulted in the lowest possible value ($argmin$) of the loss function ($\ma
 
 Evaluate the function through the testing loss:
 
-$$\epsilon_{TE} (h) = \frac{1}{|D_{TE}| \sum_{(\mathbf{X},y) \epsilon D_{TE}} \mathcal{l}(\mathfb{X},y|h*(.))$$
+$$\epsilon_{TE}(h) = \frac{1}{|D_{TE}|} \sum_{(\mathbf{X},y) \epsilon D_{TE}} \mathcal{l}(\mathfb{X},y|h*(.))$$
 
 The function $\epsilon_{TE}$ is the average of the loss function over all points in the
 test set.
