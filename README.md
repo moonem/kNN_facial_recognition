@@ -103,11 +103,49 @@ function is non-differentiable and non-continuous.
 
 ### Squared Loss
 
-The squared loss function is typically used in *regression* settings. It iterates over all training samples and suffers the loss $(h(x_i) - y_i)^2 $. The
+The squared loss function is typically **used in regression** settings. It iterates over all training samples and suffers the loss $(h(x_i) - y_i)^2 $. The
 squaring has two effects:
 - The loss suffered is always non-negative,
-- The loss suffered grows quadratically with the absolute mispredicted amount; can be problematic for data with noisy labels.
+- The loss suffered grows quadratically with the absolute mispredicted amount; can be **problematic for data with noisy labels**.
 
 $$L_{sq}(h) = \frac{1}{n} \sum_{i=1}^n (h(x_i)-y_i)^2$$
 
+### Absolute Loss
 
+Similar to the squared loss, the absolute loss function is also typically used in regression settings. Because the suffered loss grows linearly with mispredictions, it is more **suitable for noisy data**.
+
+$$L_{abs}(h) = \frac{1}{n} \sum_{i=1}^n |h(x_i)-y_i|$$
+
+#### Which Loss Function should we use?
+
+Choosing the right loss function is a critical step in solving a problem with machine learning. Considerations include,
+  - first and foremost, determining whether the problem is a classification or regression problem;
+  - then, if the labels in the training data are accurate or if the data is noisy;
+  - if Regression, it is additionally worth considering if it is better to make many tiny but few large mistakes (**squared loss**);
+  - or if it is OK to tolerate some larger mistakes yet drive most errors down to zero when possible (**absolute loss**).
+
+### Generalization not Memorization: Split data into Training-Validation-Test
+
+In machine learning, we incentivize an algorithm to do as well as possible on one particular data set. So what they can do is they can just memorize that data set. Essentially, what they're learning is a database, but they just look up the samples and say, "Oh, for that sample, the label is the following." We want to avoid
+this from happening. To avoid this we split the data into two parts: **training** and **test**. Usually, it's an 80-20 split. We only let it train on the 80% training data. and we never show the test data. And once we are convinced it's a good algorithm, then we evaluate it; not on the training data, but on the test
+data.
+
+the test data is really the kind of data that you may see during deployment. So we can't just have all data of one kind going training, and all data of another kind during testing. We need to just shuffle the data uniformly at random, and then we just split it 80-20 into train and test.
+
+But shuffling may not be appropriate if the data is **temporal** type, that means data was collected over time, and it changes over time such as, email spam. So in this case, the training data has to be past data; for example, data collected on Monday through Thursday. And then test data has to be future data; for example, Friday through Sunday. Another setting may be where we have medical data. Here, we want to make sure that we *split on patients* so that the training data consists of all measurements made by one set of patients. But then the test data is actually totally different patients because we want to make sure that our algorithm
+then works on new patients that come into the hospital. We need to make sure that we don't predict the past from the future data, always future from the past.
+
+there is another caveat when we do the splitting to training and test, we are only allowed to look at the test data once. If we look at the test data multiple
+times and tweak our algorithm to do well on test data it will overfit the function on this particular dataset and not necessarily improving its accuracy on new data. To avoid overfitting to the training set, we should usually split the data into three mutually exclusive subsets: 
+
+      - Training Data, $D_{TR}$ - 80%
+      - Validation Data, $D_{VA}$ - 10%
+      - Test Data, $D_{TE}$ - 10%
+
+We then choose a function based on the training data, improve it using the validation data, and evaluate it on the test data. The validation data set is a proxy for the test set.
+
+## Training the Function
+
+We choose a function $h$ to minimize the training loss:
+$$h^* (.) = argmin_{h\epsilon \mathbf{H}} \epsilon_{TR} (h),$$
+$$\epsilon_{TR} (h) = \frac{1}{|D_{TR}|} \sum_{(x,y)\epsilon D_{TR}} \mathfb{l}(\mathfb{X},y|h(.))$$
