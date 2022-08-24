@@ -169,3 +169,4 @@ test set.
 The testing loss is an unbiased estimator (i.e., an approximation) of the **generalization loss** — the loss over unseen data. Minimizing the generalization loss is our true objective but cannot be done directly:
 
 $$\epsilon (h) = \mathbb{E}_{(\mathbf{X},y) ~ \mathcal{P}} [\mathcal{l} (\mathbf{X}, y|h(.))]$$
+
