@@ -147,5 +147,7 @@ We then choose a function based on the training data, improve it using the valid
 ## Training the Function
 
 We choose a function $h$ to minimize the training loss:
-$$h^* (.) = argmin_{h\epsilon \mathbf{H}} \epsilon_{TR} (h),$$
+
+$$h^* (.) &=& argmin_{h\epsilon \mathbf{H}} \epsilon_{TR} (h),$$
+
 $$\epsilon_{TR} (h) = \frac{1}{|D_{TR}|} \sum_{(x,y)\epsilon D_{TR}} \mathfb{l}(\mathfb{X},y|h(.))$$
