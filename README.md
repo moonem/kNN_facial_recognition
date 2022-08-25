@@ -153,7 +153,7 @@ $$h^*(.) = argmin_ {h \epsilon \mathcal{H}} \epsilon_{TR} (h),$$
 $$\epsilon_{TR} (h) = \frac{1}{|D_{TR}|} \sum_{(\mathbf{x},y)\epsilon D_{TR}} \mathcal{l}(\mathbf{X},y|h(.))$$
 
 Here, $\mathcal{H}$ is the hypothetical class (i.e., the set of all possible classifiers $h(.)$). In other words, we are trying to find a hypothesis $h$ which would
-have resulted in the lowest possible value ($argmin$) of the loss function ($\mathcal{l}$) averaged over all the points in the training set which we will call \(\epsilon_{TR}\).
+have resulted in the lowest possible value ($argmin$) of the loss function ($\mathcal{l}$) averaged over all the points in the training set which we will call $\epsilon_{TR}$.
 
 ## Evaluating the Function
 
