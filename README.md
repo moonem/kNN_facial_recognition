@@ -150,7 +150,7 @@ We choose a function $h$ to minimize the training loss:
 
 $$h^*(.) = argmin_ {h \epsilon \mathcal{H}} \epsilon_{TR} (h),$$
 
-$$\epsilon_{TR} (h) = \frac{1}{|D_{TR}|} \sum_{(\mathbf{x},y)\epsilon D_{TR}} \mathcal{l}(\mathbf{X},y|h(.))$$
+$$\epsilon_{TR} (h) = \frac{1}{|D_{TR}|} \sum_{(\mathbf{x},y)\in D_{TR}} \mathcal{l}(\mathbf{X},y|h(.))$$
 
 Here, $\mathcal{H}$ is the hypothetical class (i.e., the set of all possible classifiers $h(.)$). In other words, we are trying to find a hypothesis $h$ which would
 have resulted in the lowest possible value ($argmin$) of the loss function ($\mathcal{l}$) averaged over all the points in the training set which we will call $\epsilon_{TR}$.
@@ -159,7 +159,7 @@ have resulted in the lowest possible value ($argmin$) of the loss function ($\ma
 
 Evaluate the function through the testing loss:
 
-$$\epsilon_{TE}(h) = \frac{1}{|D_{TE}|} \sum_{(\mathbf{X},y) \epsilon D_{TE}} \mathcal{l}(\mathbf{X},y|h*(.))$$
+$$\epsilon_{TE}(h) = \frac{1}{|D_{TE}|} \sum_{(\mathbf{X},y) \in D_{TE}} \mathcal{l}(\mathbf{X},y|h*(.))$$
 
 The function `$\epsilon_{TE}$` is the average of the loss function over all points in the test set.
 The function $`\epsilon_{TE}`$ is the average of the loss function over all points in the test set.
